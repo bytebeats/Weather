@@ -1,4 +1,4 @@
-package me.bytebeats.plugin.weather
+package me.bytebeats.plugin.weather.service
 
 /**
  * @Author bytebeats
@@ -9,5 +9,5 @@ package me.bytebeats.plugin.weather
  * @Description TO-DO
  */
 
-interface AirService {
+interface TyphonService {
 }

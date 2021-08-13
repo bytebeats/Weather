@@ -1,4 +1,4 @@
-package me.bytebeats.plugin.weather
+package me.bytebeats.plugin.weather.service
 
 /**
  * @Author bytebeats
