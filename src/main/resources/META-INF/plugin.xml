@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>me.bytebeats.plugin.weather</id>
+    <name>Weather</name>
+    <vendor email="happychinap@gmail.com" url="https://github.com/bytebeats">bytebeats</vendor>
+
+    <description><![CDATA[
+    Weather: to know what's weather when you are busy with coding!<br>
+    <em>Many times, you went downstairs without an umbrella but found it was raining!</em>
+    <em>Many times, you went off work but found it was flooding on the road!</em>
+    <em>Many times, you just didn't realize high-wind!</em>
+    <br>Just try Weather and spread the words!
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
