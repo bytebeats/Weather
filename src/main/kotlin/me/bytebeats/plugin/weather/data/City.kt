@@ -1,6 +1,6 @@
 package me.bytebeats.plugin.weather.data
 
-data class Location(
+data class City(
     val name: String,
     val id: String,
     val lat: String,

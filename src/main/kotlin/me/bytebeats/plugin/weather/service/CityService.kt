@@ -1,9 +1,12 @@
 package me.bytebeats.plugin.weather.service
 
-import kotlinx.coroutines.Deferred
-import me.bytebeats.plugin.weather.data.LocationWrapper
-import retrofit2.Response
+import me.bytebeats.plugin.weather.enums.POI
+import me.bytebeats.plugin.weather.resp.LocationResponse
+import me.bytebeats.plugin.weather.resp.PoiResponse
+import me.bytebeats.plugin.weather.resp.TopCityResponse
+import me.bytebeats.plugin.weather.retrofit.RetrofitService
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 /**
  * @Author bytebeats
@@ -15,6 +18,16 @@ import retrofit2.http.GET
  */
 
 interface CityService {
-    @GET("")
-    fun queryCities(): Deferred<Response<LocationWrapper>>
+    companion object {
+        val service: CityService = RetrofitService.geoService.create(CityService::class.java)
+    }
+
+    @GET("/v2/city/lookup")
+    suspend fun queryCities(@Query("location") location: String): LocationResponse
+
+    @GET("/v2/city/top")
+    suspend fun topCities(@Query("number") topN: Int, @Query("range") country: String = "cn"): TopCityResponse
+
+    @GET("/v2/poi/lookup")
+    suspend fun poi(@Query("location") location: String, @Query("type") type: POI): PoiResponse
 }
