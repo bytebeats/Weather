@@ -17,6 +17,12 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <notificationGroup displayType="NONE" id="Weather Log" icon="AllIcons.General.NotificationInfo"
+            key="notification.group.main" isLogByDefault="true" />
+        <notificationGroup displayType="BALLOON" id="Weather Balloon" icon="AllIcons.General.NotificationWarning"
+            key="notification.group.balloon" isLogByDefault="true" />
+        <notificationGroup displayType="TOOL_WINDOW" id="Weather Tool Window" icon="AllIcons.Plugins.Updated"
+            toolWindowId="Weather Tool Window" key="notification.group.toolwindow" isLogByDefault="true" />
     </extensions>
 
     <actions>
