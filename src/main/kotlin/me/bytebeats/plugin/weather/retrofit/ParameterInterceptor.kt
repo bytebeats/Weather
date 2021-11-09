@@ -1,6 +1,8 @@
 package me.bytebeats.plugin.weather.retrofit
 
 import me.bytebeats.plugin.weather.util.APP_KEY
+import me.bytebeats.plugin.weather.util.LANGUAGE
+import me.bytebeats.plugin.weather.util.UNIT
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -19,6 +21,8 @@ class ParameterInterceptor : Interceptor {
         val originalUrl = original.url
         val newUrl = originalUrl.newBuilder()
             .addQueryParameter("key", APP_KEY)
+            .addQueryParameter("lang", LANGUAGE)
+            .addQueryParameter("unit", UNIT)
             .build()
         val requestBuilder = original.newBuilder().url(newUrl)
         return chain.proceed(requestBuilder.build())

@@ -10,3 +10,5 @@ package me.bytebeats.plugin.weather.util
  */
 
 var APP_KEY = "f040f16a4495459aa5404f320cb58af3"
+var LANGUAGE = "zh"
+var UNIT = "m" // or i
