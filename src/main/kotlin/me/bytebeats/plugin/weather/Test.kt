@@ -1,7 +1,6 @@
 package me.bytebeats.plugin.weather
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import me.bytebeats.plugin.weather.service.CityService
 
 /**
@@ -17,10 +16,9 @@ class Test {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            GlobalScope.launch {
-                CityService.service.queryCities("beij").also {
-                    println(it.toString())
-                }
+            runBlocking {
+               val resp = CityService.service.queryCities("余")
+                CityService.service.topCities(5)
             }
         }
     }
