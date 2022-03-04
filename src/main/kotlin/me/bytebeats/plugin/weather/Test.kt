@@ -2,7 +2,6 @@ package me.bytebeats.plugin.weather
 
 import kotlinx.coroutines.runBlocking
 import me.bytebeats.plugin.weather.service.CityService
-import javax.swing.SwingUtilities
 
 /**
  * @Author bytebeats
@@ -18,9 +17,8 @@ class Test {
         @JvmStatic
         fun main(args: Array<String>) {
             runBlocking {
-                CityService.service.queryCities("beij").also {
-                    SwingUtilities.invokeLater { println(it.toString()) }
-                }
+               val resp = CityService.service.queryCities("余")
+                CityService.service.topCities(5)
             }
         }
     }

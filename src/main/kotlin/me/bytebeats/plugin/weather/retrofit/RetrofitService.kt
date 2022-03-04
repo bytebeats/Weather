@@ -21,7 +21,7 @@ object RetrofitService {
             .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
             .addNetworkInterceptor(HttpLoggingInterceptor {
                 println(it)
-            }.setLevel(HttpLoggingInterceptor.Level.BASIC))
+            }.setLevel(HttpLoggingInterceptor.Level.BODY))
             .addInterceptor(ParameterInterceptor())
             .build()
         val builder =

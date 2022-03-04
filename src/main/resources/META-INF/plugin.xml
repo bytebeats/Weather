@@ -2,13 +2,15 @@
     <id>me.bytebeats.plugin.weather</id>
     <name>Weather</name>
     <vendor email="happychinap@gmail.com" url="https://github.com/bytebeats">bytebeats</vendor>
+    <version>0.1.0</version>
+    <idea-version since-build="201.*" />
 
     <description><![CDATA[
     Weather: to know what's weather when you are busy with coding!<br>
-    <em>Many times, you went downstairs without an umbrella but found it was raining!</em>
-    <em>Many times, you went off work but found it was flooding on the road!</em>
-    <em>Many times, you just didn't realize high-wind!</em>
-    <br>Just try Weather and spread the words!
+    <em>Many times, you went downstairs without an umbrella but found it was raining!</em><br>
+    <em>Many times, you went off work but found it was flooding on the road!</em><br>
+    <em>Many times, you just didn't realize high-wind!</em><br>
+    Just try Weather and spread the words!
     ]]></description>
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
@@ -27,5 +29,17 @@
 
     <actions>
         <!-- Add your actions here -->
+        <group id="me.bytebeats.plugin.weather" text="_Weather"
+            description="Settings for Weather on Intellij IDEA platform">
+            <add-to-group group-id="MainMenu" anchor="last" />
+            <action id="me.bytebeats.plugin.weather.ui.PrimaryLocationAction"
+                class="me.bytebeats.plugin.weather.ui.PrimaryLocationAction" text="Where Am I"
+                icon="AllIcons.Actions.Find" description="Location where i am">
+                <keyboard-shortcut keymap="$default" first-keystroke="shift meta W" />
+            </action>
+            <action id="me.bytebeats.plugin.weather.ui.MoreLocationsAction"
+                class="me.bytebeats.plugin.weather.ui.MoreLocationsAction" text="Add More Locations"
+                icon="AllIcons.Actions.Search" description="Want to know weather of more locations" />
+        </group>
     </actions>
 </idea-plugin>

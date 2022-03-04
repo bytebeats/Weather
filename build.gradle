@@ -7,6 +7,9 @@ plugins {
 group 'io.github.bytebeats'
 version '0.1.0'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 repositories {
     mavenCentral()
 }
@@ -18,6 +21,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
