@@ -1,8 +1,8 @@
 package me.bytebeats.plugin.weather
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import me.bytebeats.plugin.weather.service.CityService
+import javax.swing.SwingUtilities
 
 /**
  * @Author bytebeats
@@ -17,9 +17,9 @@ class Test {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            GlobalScope.launch {
+            runBlocking {
                 CityService.service.queryCities("beij").also {
-                    println(it.toString())
+                    SwingUtilities.invokeLater { println(it.toString()) }
                 }
             }
         }
